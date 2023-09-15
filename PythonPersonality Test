@@ -1,0 +1,80 @@
+# Create a function to encapsulate the game, used to offer the end user the chance to play again
+def PersonalityQuiz():
+  
+    # Creating the list of variables to store the counter
+    # Z Counter created to catch out of scope user input
+    A_counter = 0
+    B_counter = 0
+    C_counter = 0
+    D_counter = 0
+    Z_counter = 0
+  
+    # Present question 1 to user and request input from user
+    Q01_Response = input ("Do you consider yourself: \n A - grounded \n B - fun loving \n C - affectionate \n D - competitive \n\n")
+    
+    # Review input, correct input to lowercase, add to appropriate counter
+    if Q01_Response.lower() == "a":
+      A_counter += 1
+    elif Q01_Response.lower() == "b":
+      B_counter += 1
+    elif Q01_Response.lower() == "c":
+      C_counter += 1
+    elif Q01_Response.lower() == "d":
+      D_counter += 1
+    else: Z_counter +=1
+    
+    # Present question 2 to user and request input from user
+    Q02_Response = input ("\nAre you: \n A - high strung \n B - Energetic \n C - Enthusiastic \n D - Adaptable \n\n")
+    
+    # Review input, correct input to lowercase, add to appropriate counter
+    if Q02_Response.lower() == "a":
+      A_counter += 1
+    elif Q02_Response.lower() == "b":
+      B_counter += 1
+    elif Q02_Response.lower() == "c":
+      C_counter += 1
+    elif Q02_Response.lower() == "d":
+      D_counter += 1
+    else: Z_counter +=1
+    
+    # Present question 3 to user and request input from user
+    input ("\nDo you consider yourself to be: \n A - ambitious \n B - reckless \n C - affectionate \n D - competitive \n\n")
+    
+    # Review input, correct input to lowercase, add to appropriate counter
+    if Q02_Response.lower() == "a":
+      A_counter += 1
+    elif Q02_Response.lower() == "b":
+      B_counter += 1
+    elif Q02_Response.lower() == "c":
+      C_counter += 1
+    elif Q02_Response.lower() == "d":
+      D_counter += 1
+    else: Z_counter +=1
+    
+    # Determine which Star Trek Lower Deck responses match up to most
+    if A_counter > B_counter and A_counter > C_counter and A_counter > D_counter:
+      print ("\nYou are most similar to Brad Boimler.")
+    
+    elif B_counter > A_counter and B_counter > C_counter and B_counter > D_counter:
+      print ("\nYou are most similar to Becket Mariner.")
+    
+    elif C_counter > A_counter and C_counter > B_counter and C_counter > D_counter:
+      print ("\nYou are most similar to Sam Rutherford.")
+    
+    elif D_counter > A_counter and D_counter > B_counter and D_counter > C_counter:
+      print ("\nYou are most similar to D'Vana Tendi.")
+    
+    # Else statement used for input error catches
+    else:
+      if Z_counter == 1:
+        print ("\n", Z_counter, "out of scope response.")
+      elif Z_counter >= 2:
+        print ("\n", Z_counter, "out of scope responses.")
+      print ("\nI see you embrace chaos.  You are most similar to Badgey! \nRUN!")
+
+#Ask user if they would like to play again
+
+while True:
+  PersonalityQuiz()
+  if input("\nThat was fun! Do you want to play again (Y/N)? ") not in ('Y', 'y'):
+      break
